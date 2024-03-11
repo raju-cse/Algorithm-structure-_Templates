@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+const int N = 2e5 + 10;
+int a[N];
+vector<int> v[N];
+bool vis[N];
+
+void dfs(int vertex){
+
+    // if(vis[vertex])return;
+
+   //cout << vertex << '\n';
+    vis[vertex] = true;
+
+
+    for(auto child : v[vertex]){
+
+        //cout << "par" << ' ' << vertex << ' ' << child << '\n';
+        if(vis[child]) continue;
+
+        dfs(child);
+    }
+}
+
+//call dfs();
